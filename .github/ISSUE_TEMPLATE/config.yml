@@ -1,0 +1,5 @@
+blank_issues_enabled: true
+contact_links:
+  - name: 部署问题（构建失败 / 数据库起不来）
+    url: https://github.com/qsumm/TestOPS/blob/main/docs/%E9%83%A8%E7%BD%B2%E4%B8%8E%E5%8D%87%E7%BA%A7/%E5%BF%AB%E9%80%9F%E5%BC%80%E5%A7%8B.md
+    about: 先看《快速开始》的排障表与《自建部署加速指引》

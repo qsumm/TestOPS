@@ -1,0 +1,57 @@
+name: 缺陷报告 / Bug report
+description: 报告一个可复现的缺陷（环境 + 复现步骤 + 期望 vs 实际）
+title: "[bug] "
+labels: ["bug"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        感谢反馈。**报 bug 前请先确认不是环境问题**（磁盘/内存/网络）。
+        SeekDB 对资源有硬要求：数据盘空闲 >15GB、可用内存 ≥2GB —— 不满足时它会静默退出。
+  - type: textarea
+    id: what
+    attributes:
+      label: 现象
+      description: 你看到什么？贴关键日志（去掉 IP/密钥）
+      placeholder: |
+        docker logs aiops-platform --tail 30
+    validations:
+      required: true
+  - type: textarea
+    id: expect
+    attributes:
+      label: 期望行为 vs 实际行为
+    validations:
+      required: true
+  - type: textarea
+    id: repro
+    attributes:
+      label: 复现步骤
+      placeholder: |
+        1. 部署方式（docker compose / 裸跑）
+        2. 做了什么操作
+        3. 多久后出现
+    validations:
+      required: true
+  - type: textarea
+    id: env
+    attributes:
+      label: 环境
+      placeholder: |
+        平台版本（/api/health 的 version）:
+        系统 / 内核（uname -r）:
+        CPU / 内存 / 磁盘空闲:
+        Docker 版本:
+        部署方式:
+    validations:
+      required: true
+  - type: dropdown
+    id: severity
+    attributes:
+      label: 严重程度
+      options:
+        - S1 数据丢失 / 平台不可用
+        - S2 核心功能不可用（有绕过）
+        - S3 体验问题
+    validations:
+      required: true

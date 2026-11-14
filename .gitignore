@@ -1,0 +1,29 @@
+# Python
+.venv/
+__pycache__/
+*.pyc
+.pytest_cache/
+*.egg-info/
+# 环境与密钥
+.env
+*.key
+# 数据与日志
+*.db
+logs/
+# IDE
+.idea/
+.vscode/
+.DS_Store
+
+# D66：内置手册的同步产物（由 tools/sync_manual.py 生成，源在 docs/）
+static/manual/
+agent/agent_cache.db
+
+# 视觉工具的临时产物目录（不入库）
+.mavis/
+agent/wheels/
+# D235 离线 wheel 目录：内容不入库（几十 MB 二进制），但**目录本身必须存在**——
+# Dockerfile 有 `COPY deploy/wheels/ /opt/wheels/`，目录缺失会让构建直接失败。
+deploy/wheels/*
+!deploy/wheels/.gitkeep
+!deploy/wheels/README.txt
